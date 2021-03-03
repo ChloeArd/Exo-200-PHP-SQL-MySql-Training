@@ -53,7 +53,5 @@ function sanitize($data) {
     $data = stripslashes($data);
     // Transforme certains caractères spéciaux en entités HTML pour les rendre innofensifs.
     $data = htmlspecialchars($data);
-    // Ajoute des slashes pour éviter de fermer les chaînes de caractères dans le formulaire.
-    $data = addslashes($data);
     return $data;
 }
