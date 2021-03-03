@@ -1,6 +1,6 @@
 <?php
 
-if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_difference')) {
+if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_difference', 'available')) {
     try {
         $server = "localhost";
         $db = "database/reunion_island";
@@ -17,8 +17,9 @@ if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_differ
         $distance = sanitize($_POST['distance']);
         $duration = sanitize($_POST['duration']);
         $height_difference = sanitize($_POST['height_difference']);
+        $available = sanitize($_POST['available']);
 
-        $sql = "INSERT INTO hiking VALUES (null, '$name', '$difficulty', '$distance', '$duration', '$height_difference')";
+        $sql = "INSERT INTO hiking VALUES (null, '$name', '$difficulty', '$distance', '$duration', '$height_difference', $available)";
 
         $bdd->exec($sql);
 

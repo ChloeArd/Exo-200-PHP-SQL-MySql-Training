@@ -9,17 +9,18 @@
 </head>
 <body>
     <form method="post" action="createHiking.php">
-        <input type="text" name="name" placeholder="Nom de la randonnée">
-        <select name="difficulty" id="difficulty">
+        <input type="text" name="name" placeholder="Nom de la randonnée" required>
+        <select name="difficulty" id="difficulty" required>
             <option value="très facile">Très facile</option>
             <option value="facile">Facile</option>
             <option value="moyen">Moyen</option>
             <option value="difficile">Difficile</option>
             <option value="très difficile">Très difficile</option>
         </select>
-        <input type="number" name="distance" placeholder="Distance (km)">
-        <input type="time" name="duration">
-        <input type="number" name="height_difference" placeholder="Dénivelé (m)">
+        <input type="number" name="distance" placeholder="Distance (km)" required>
+        <input type="time" name="duration" required>
+        <input type="number" name="height_difference" placeholder="Dénivelé (m)" required>
+        <input type="text" name="available" placeholder="Available">
 
         <input id="enter" type="submit" name="Enter" value="ajouter">
     </form>

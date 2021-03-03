@@ -22,6 +22,7 @@
     <input type="number" name="distance" placeholder="Distance (km)" value="<?= $_GET["distance"] ?>">
     <input type="time" name="duration" value="<?= $_GET["duration"] ?>">
     <input type="number" name="height_difference" placeholder="Dénivelé (m)" value="<?= $_GET["height_difference"] ?>">
+    <input type="text" name="available" value="<?= base64_decode($_GET['available']) ?>" placeholder="Available">
 
     <input id="enter" type="submit" name="Enter" value="ajouter">
 </form>
