@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Toutes les Randonnées</title>
     <link rel="stylesheet" href="css/basics.css">
+    <script src="https://kit.fontawesome.com/351e9300a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -38,6 +39,7 @@ try {
                     <th>Distance</th>
                     <th>Duration</th>
                     <th>Dénivelé</th>
+                    <th>Supprimer</th>
                 </tr>
              ";
         foreach ($stmt->fetchAll() as $user) {
@@ -47,6 +49,7 @@ try {
                         <td>" . $user['distance'] . " Km</td>
                         <td>" . $user['duration'] . "</td>
                         <td>" . $user['height_difference'] . " m</td>
+                        <td><a href='delete.php?id=" . $user['id'] . "'><i class='fas fa-trash'></i></a></td>
                 </tr>";
         }
     }

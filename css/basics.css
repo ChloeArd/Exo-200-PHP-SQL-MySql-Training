@@ -40,5 +40,10 @@ th {
 td {
   padding: 10px;
   border: 1px solid black;
+  text-align: center;
+}
+
+.fas:hover {
+  color: lightgray;
 }
 
