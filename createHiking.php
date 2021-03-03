@@ -22,13 +22,14 @@ if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_differ
 
         $bdd->exec($sql);
 
+        echo "<div> La randonnée a bien été ajouté !</div>";
+
+        echo "<a href='read.php'> Les randonnées </a>";
 
     }
     catch (PDOException $e) {
         echo $e->getMessage();
     }
-
-    header("Location: read.php");
 }
 
 
@@ -50,9 +51,13 @@ function issetPostParams(string ...$params): bool {
     return true;
 }
 
-
+/**
+ * Assainit le contenu d'une variable
+ * @param $data
+ * @return string
+ */
 function sanitize($data) {
-    //Supprimer les espaces superflus en début et fin de chaine.
+    // Supprime les espaces superflus en début et fin de chaine.
     $data = trim($data);
     // Supprime les antislashes que les hackers pourraient utiliser pour échapper des caractères spéciaux.
     $data = stripslashes($data);

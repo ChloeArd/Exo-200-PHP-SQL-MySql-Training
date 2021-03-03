@@ -7,6 +7,23 @@ label, select, input{
   align-items: center;
 }
 
+#enter {
+  background-color: #341401;
+  color: white;
+  border-radius: 5px 5px;
+  border: none;
+  padding: 3px 0;
+}
+
+a {
+  color: #341401;
+  text-decoration: none;
+}
+
+td > a:hover {
+  text-decoration: underline black;
+}
+
 body{
   background: #FFBB3F;
   font-family: Calibri, sans-serif;

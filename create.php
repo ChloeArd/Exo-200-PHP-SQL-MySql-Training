@@ -21,7 +21,7 @@
         <input type="time" name="duration">
         <input type="number" name="height_difference" placeholder="Dénivelé (m)">
 
-        <input type="submit" name="Enter" value="ajouter">
+        <input id="enter" type="submit" name="Enter" value="ajouter">
     </form>
 </body>
 </html>

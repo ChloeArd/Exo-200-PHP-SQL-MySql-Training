@@ -42,7 +42,7 @@ try {
              ";
         foreach ($stmt->fetchAll() as $user) {
             echo " <tr>
-                        <td>" . $user['name'] . "</td> 
+                        <td><a href='update.php?id=" . $user['id'] . "&name=" . base64_encode($user['name']) . "&difficulty=" . $user['difficulty'] . "&distance=" . $user['distance'] . "&duration=" . $user['duration'] . "&height_difference=" . $user['height_difference'] . "'>" . $user['name'] . "</a></td> 
                         <td>" . $user['difficulty'] . "</td>
                         <td>" . $user['distance'] . " Km</td>
                         <td>" . $user['duration'] . "</td>
