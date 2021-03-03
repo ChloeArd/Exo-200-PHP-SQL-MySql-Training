@@ -26,7 +26,7 @@ if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_differ
 
     $stm->execute();
 
-    echo "<div> La randonnée a bien été modifié !</div>";
+    echo "<div> La randonnée a bien été modifiée !</div>";
 
     echo "<a href='read.php'> Les randonnées </a>";
 }

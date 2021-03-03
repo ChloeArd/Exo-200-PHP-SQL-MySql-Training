@@ -18,7 +18,7 @@ if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_differ
 
     $bdd->exec($sql);
 
-    echo "<div> La randonnée a bien été ajouté !</div>";
+    echo "<div> La randonnée a bien été ajoutée !</div>";
 
     echo "<a href='read.php'> Les randonnées </a>";
 }
