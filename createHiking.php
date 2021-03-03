@@ -1,38 +1,27 @@
 <?php
 
 if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_difference', 'available')) {
-    try {
-        $server = "localhost";
-        $db = "database/reunion_island";
-        $user = "root";
-        $psw = "";
 
-        $bdd = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $psw);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) .
-        $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    require "Classes/DB.php";
 
-        // Données du formulaire :
-        $name = sanitize($_POST['name']);
-        $difficulty = sanitize($_POST['difficulty']);
-        $distance = sanitize($_POST['distance']);
-        $duration = sanitize($_POST['duration']);
-        $height_difference = sanitize($_POST['height_difference']);
-        $available = sanitize($_POST['available']);
+    $bdd = DB::getInstance();
 
-        $sql = "INSERT INTO hiking VALUES (null, '$name', '$difficulty', '$distance', '$duration', '$height_difference', $available)";
+    // Données du formulaire :
+    $name = sanitize($_POST['name']);
+    $difficulty = sanitize($_POST['difficulty']);
+    $distance = sanitize($_POST['distance']);
+    $duration = sanitize($_POST['duration']);
+    $height_difference = sanitize($_POST['height_difference']);
+    $available = sanitize($_POST['available']);
 
-        $bdd->exec($sql);
+    $sql = "INSERT INTO hiking VALUES (null, '$name', '$difficulty', '$distance', '$duration', '$height_difference', '$available')";
 
-        echo "<div> La randonnée a bien été ajouté !</div>";
+    $bdd->exec($sql);
 
-        echo "<a href='read.php'> Les randonnées </a>";
+    echo "<div> La randonnée a bien été ajouté !</div>";
 
-    }
-    catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+    echo "<a href='read.php'> Les randonnées </a>";
 }
-
 
 
 

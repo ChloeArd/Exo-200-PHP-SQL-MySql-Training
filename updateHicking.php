@@ -1,45 +1,34 @@
 <?php
 
 if (issetPostParams('name', 'difficulty', 'distance', 'duration', 'height_difference', 'available')) {
-    try {
-        $server = "localhost";
-        $db = "database/reunion_island";
-        $user = "root";
-        $psw = "";
+    require "Classes/DB.php";
 
-        $bdd = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $psw);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) .
-        $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $bdd = DB::getInstance();
 
-        // Données du formulaire :
-        $id = $_GET['id'];
-        $name = sanitize($_POST['name']);
-        $difficulty = sanitize($_POST['difficulty']);
-        $distance = sanitize($_POST['distance']);
-        $duration = sanitize($_POST['duration']);
-        $height_difference = sanitize($_POST['height_difference']);
-        $available = sanitize($_POST['available']);
+    // Données du formulaire :
+    $id = $_GET['id'];
+    $name = sanitize($_POST['name']);
+    $difficulty = sanitize($_POST['difficulty']);
+    $distance = sanitize($_POST['distance']);
+    $duration = sanitize($_POST['duration']);
+    $height_difference = sanitize($_POST['height_difference']);
+    $available = sanitize($_POST['available']);
 
-        $stm = $bdd->prepare("UPDATE hiking SET name = :name, difficulty = :difficulty, distance = :distance, duration = :duration, height_difference = :height_difference, available = :available WHERE id = :id");
+    $stm = $bdd->prepare("UPDATE hiking SET name = :name, difficulty = :difficulty, distance = :distance, duration = :duration, height_difference = :height_difference, available = :available WHERE id = :id");
 
-        $stm->bindParam(':name', $name);
-        $stm->bindParam(':difficulty', $difficulty);
-        $stm->bindParam(':distance', $distance);
-        $stm->bindParam(':duration', $duration);
-        $stm->bindParam(':height_difference', $height_difference);
-        $stm->bindParam(':available', $available);
-        $stm->bindParam(':id', $id);
+    $stm->bindParam(':name', $name);
+    $stm->bindParam(':difficulty', $difficulty);
+    $stm->bindParam(':distance', $distance);
+    $stm->bindParam(':duration', $duration);
+    $stm->bindParam(':height_difference', $height_difference);
+    $stm->bindParam(':available', $available);
+    $stm->bindParam(':id', $id);
 
-        $stm->execute();
+    $stm->execute();
 
-        echo "<div> La randonnée a bien été modifié !</div>";
+    echo "<div> La randonnée a bien été modifié !</div>";
 
-        echo "<a href='read.php'> Les randonnées </a>";
-
-    }
-    catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+    echo "<a href='read.php'> Les randonnées </a>";
 }
 
 
