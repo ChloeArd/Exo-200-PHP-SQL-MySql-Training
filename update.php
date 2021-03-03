@@ -9,21 +9,19 @@
 </head>
 <body>
 
-
-
-<form method="post" action="">
+<form method="post" action="updateHicking.php?id=<?= $_GET["id"] ?>">
     <input type="text" name="name" placeholder="Nom de la randonnée" value="<?= base64_decode($_GET["name"]) ?>">
     <select name="difficulty" id="difficulty">
-        <option value="<?= ($_GET["difficulty"]) ?>" autofocus><?= ($_GET["difficulty"]) ?></option>
+        <option value="<?= $_GET["difficulty"] ?>" autofocus><?= $_GET["difficulty"] ?></option>
         <option value="très facile">Très facile</option>
         <option value="facile">Facile</option>
         <option value="moyen">Moyen</option>
         <option value="difficile">Difficile</option>
         <option value="très difficile">Très difficile</option>
     </select>
-    <input type="number" name="distance" placeholder="Distance (km)" value="<?= ($_GET["distance"]) ?>">
-    <input type="time" name="duration" value="<?= ($_GET["duration"]) ?>">
-    <input type="number" name="height_difference" placeholder="Dénivelé (m)" value="<?= ($_GET["height_difference"]) ?>">
+    <input type="number" name="distance" placeholder="Distance (km)" value="<?= $_GET["distance"] ?>">
+    <input type="time" name="duration" value="<?= $_GET["duration"] ?>">
+    <input type="number" name="height_difference" placeholder="Dénivelé (m)" value="<?= $_GET["height_difference"] ?>">
 
     <input id="enter" type="submit" name="Enter" value="ajouter">
 </form>
