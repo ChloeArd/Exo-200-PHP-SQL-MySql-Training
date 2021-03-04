@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/basics.css">
 </head>
 <body>
-    <form method="post" action="createHiking.php">
+    <form method="post" action="./public/createHiking.php">
         <input type="text" name="name" placeholder="Nom de la randonnée" required>
         <select name="difficulty" id="difficulty" required>
             <option value="très facile">Très facile</option>

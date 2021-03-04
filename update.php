@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="post" action="updateHicking.php?id=<?= $_GET["id"] ?>">
+<form method="post" action="public/updateHicking.php?id=<?= $_GET['id'] ?>">
     <input type="text" name="name" placeholder="Nom de la randonnée" value="<?= base64_decode($_GET["name"]) ?>">
     <select name="difficulty" id="difficulty">
         <option value="<?= $_GET["difficulty"] ?>" autofocus><?= $_GET["difficulty"] ?></option>
